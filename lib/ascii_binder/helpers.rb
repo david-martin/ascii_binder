@@ -644,7 +644,7 @@ module AsciiBinder
               src_group_path = File.join(source_dir,topic_group['Dir'])
               tgt_group_path = File.join(branch_path,topic_group['Dir'])
               if not File.exists?(tgt_group_path)
-                Dir.mkdir(tgt_group_path)
+                FileUtils.mkdir_p(tgt_group_path)
               end
               next if not topic['Distros'].include?(distro)
               if topic.has_key?('File')
